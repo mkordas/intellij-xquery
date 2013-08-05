@@ -14,33 +14,23 @@
  * limitations under the License.
  */
 
-// This is a generated file. Not intended for manual editing.
-package org.intellij.xquery.psi;
+package org.intellij.xquery.runner.options;
 
-import java.util.List;
-import org.jetbrains.annotations.*;
-import com.intellij.psi.PsiElement;
-import com.intellij.navigation.ItemPresentation;
+import com.intellij.ui.ColoredListCellRenderer;
+import com.intellij.util.ui.UIUtil;
 
-public interface XQueryVarDecl extends XQueryElement {
+import javax.swing.*;
 
-  @NotNull
-  List<XQueryAnnotation> getAnnotationList();
-
-  @Nullable
-  XQueryExternalVarPart getExternalVarPart();
-
-  @Nullable
-  XQueryTypeDeclaration getTypeDeclaration();
-
-  @Nullable
-  XQueryVarName getVarName();
-
-  @Nullable
-  XQueryVarValue getVarValue();
-
-  ItemPresentation getPresentation();
-
-  boolean isExternal();
-
+/**
+* User: ligasgr
+* Date: 06/10/13
+* Time: 17:25
+*/
+public class XQueryRunnerConfigurationCellRenderer extends ColoredListCellRenderer {
+    @Override
+    protected void customizeCellRenderer(JList list, Object value, int index, boolean selected, boolean hasFocus) {
+        setBackground(UIUtil.getListBackground(selected));
+        XQueryRunnerConfiguration configuration = (XQueryRunnerConfiguration) value;
+        append(configuration.NAME);
+    }
 }

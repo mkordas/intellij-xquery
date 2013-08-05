@@ -20,27 +20,10 @@ package org.intellij.xquery.psi;
 import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
-import com.intellij.navigation.ItemPresentation;
 
-public interface XQueryVarDecl extends XQueryElement {
-
-  @NotNull
-  List<XQueryAnnotation> getAnnotationList();
+public interface XQueryExternalVarPart extends XQueryElement {
 
   @Nullable
-  XQueryExternalVarPart getExternalVarPart();
-
-  @Nullable
-  XQueryTypeDeclaration getTypeDeclaration();
-
-  @Nullable
-  XQueryVarName getVarName();
-
-  @Nullable
-  XQueryVarValue getVarValue();
-
-  ItemPresentation getPresentation();
-
-  boolean isExternal();
+  XQueryVarDefaultValue getVarDefaultValue();
 
 }

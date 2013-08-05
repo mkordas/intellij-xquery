@@ -306,4 +306,8 @@ public class XQueryPsiImplUtil {
         }
         return result;
     }
+
+    public static boolean isExternal(XQueryVarDecl variableDeclaration) {
+        return variableDeclaration.getExternalVarPart() != null;
+    }
 }

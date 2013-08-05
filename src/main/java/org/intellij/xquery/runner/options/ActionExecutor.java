@@ -14,33 +14,13 @@
  * limitations under the License.
  */
 
-// This is a generated file. Not intended for manual editing.
-package org.intellij.xquery.psi;
+package org.intellij.xquery.runner.options;
 
-import java.util.List;
-import org.jetbrains.annotations.*;
-import com.intellij.psi.PsiElement;
-import com.intellij.navigation.ItemPresentation;
-
-public interface XQueryVarDecl extends XQueryElement {
-
-  @NotNull
-  List<XQueryAnnotation> getAnnotationList();
-
-  @Nullable
-  XQueryExternalVarPart getExternalVarPart();
-
-  @Nullable
-  XQueryTypeDeclaration getTypeDeclaration();
-
-  @Nullable
-  XQueryVarName getVarName();
-
-  @Nullable
-  XQueryVarValue getVarValue();
-
-  ItemPresentation getPresentation();
-
-  boolean isExternal();
-
+/**
+ * User: ligasgr
+ * Date: 06/10/13
+ * Time: 17:10
+ */
+interface ActionExecutor {
+    void execute(XQueryRunnerType type);
 }

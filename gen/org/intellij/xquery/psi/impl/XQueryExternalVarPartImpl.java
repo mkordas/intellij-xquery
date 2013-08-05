@@ -15,32 +15,32 @@
  */
 
 // This is a generated file. Not intended for manual editing.
-package org.intellij.xquery.psi;
+package org.intellij.xquery.psi.impl;
 
 import java.util.List;
 import org.jetbrains.annotations.*;
+import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import com.intellij.navigation.ItemPresentation;
+import com.intellij.psi.PsiElementVisitor;
+import com.intellij.psi.util.PsiTreeUtil;
+import static org.intellij.xquery.psi.XQueryTypes.*;
+import org.intellij.xquery.psi.*;
 
-public interface XQueryVarDecl extends XQueryElement {
+public class XQueryExternalVarPartImpl extends XQueryElementImpl implements XQueryExternalVarPart {
 
-  @NotNull
-  List<XQueryAnnotation> getAnnotationList();
+  public XQueryExternalVarPartImpl(ASTNode node) {
+    super(node);
+  }
 
+  @Override
   @Nullable
-  XQueryExternalVarPart getExternalVarPart();
+  public XQueryVarDefaultValue getVarDefaultValue() {
+    return findChildByClass(XQueryVarDefaultValue.class);
+  }
 
-  @Nullable
-  XQueryTypeDeclaration getTypeDeclaration();
-
-  @Nullable
-  XQueryVarName getVarName();
-
-  @Nullable
-  XQueryVarValue getVarValue();
-
-  ItemPresentation getPresentation();
-
-  boolean isExternal();
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof XQueryVisitor) ((XQueryVisitor)visitor).visitExternalVarPart(this);
+    else super.accept(visitor);
+  }
 
 }
